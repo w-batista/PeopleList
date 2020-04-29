@@ -1,0 +1,52 @@
+<form role="form" [formGroup]="formPeople" (ngSubmit)="onSubmit($event)">
+
+  <mat-card class="mat-elevation-z8" flex="80">
+
+    <mat-card-title>Cadastro de Pessoas</mat-card-title>
+
+    <mat-card-content fxLayout="column" fxLayoutAlign="space-around stretch">
+
+      <div fxLayout="row" fxLayoutAlign="space-between stretch">
+        <mat-form-field fxFlex="100">
+          <input matInput type="text" formControlName="nome"
+            placeholder="Nome" autocomplete="none">
+        </mat-form-field>
+
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between stretch">
+      <mat-form-field>
+        <input matInput type="text" formControlName="rg"
+           placeholder="RG" mask="00.000.000-0"  autocomplete="none">
+      </mat-form-field>
+      <mat-form-field fxFlex="45">
+        <input matInput type="text" formControlName="cpf"
+          placeholder="CPF" mask="000.000.000-00"  autocomplete="none">
+      </mat-form-field>
+    </div>
+      <div fxLayout="row" fxLayoutAlign="space-between stretch">
+        <mat-form-field fxFlex="100">
+          <input matInput type="text" formControlName="email"
+            placeholder="E-mail"  autocomplete="none">
+        </mat-form-field>
+
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between stretch">
+        <mat-form-field fxFlex="45">
+          <input matInput type="text" formControlName="telefone"
+            placeholder="Telefone" mask="(00)0000-0000"  autocomplete="none">
+        </mat-form-field>
+        <mat-form-field fxFlex="45">
+          <input matInput type="text" formControlName="data_nasc"
+           placeholder="Data de Nascimento" mask="00/00/0000"  autocomplete="none">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="end end" >
+          <button mat-button color="accent" type="submit" [disabled]="!formPeople.valid">
+            <mat-icon>done</mat-icon>&nbsp;Salvar
+          </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

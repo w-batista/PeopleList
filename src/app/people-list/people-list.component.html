@@ -1,0 +1,25 @@
+
+<mat-card>
+  <mat-card-title color="accent">Lista de Pessoas Cadastradas</mat-card-title>
+  <mat-list style="overflow: auto; max-height: 450px;" #p>
+    <mat-list-item *ngFor="let person of people">
+      <mat-icon matListIcon>account_circle</mat-icon>
+      <h3 matLine>{{ person.nome }}</h3>
+      <mat-hint matLine style="font-size: 10px;">CPF: {{ person.cpf | mask:'000.000.000-00'}}</mat-hint>
+      <div matLine fxLayout="row" fxLayoutAlign="space-between center">
+      <p style="line-height: 3px;">
+        <span> {{ person.email }} </span>
+        <span> -- Data de Nasc.: {{ person.data_nasc | mask: '99/99/9999'}} </span>
+      </p>
+    </div>
+    <mat-action-list fxLayout="row" fxLayoutAlign="space-around center">
+      <button mat-icon-button color="accent" (click)="onEdit(person)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="onDelete(person)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-action-list>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
