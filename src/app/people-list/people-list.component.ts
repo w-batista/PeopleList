@@ -11,6 +11,9 @@ import { MatSnackBar } from '@angular/material';
 })
 export class PeopleListComponent implements OnInit {
 
+  artur: string = 'Soroca';
+
+  cards: any[] = [{card: 'card1', numero: 1, progress: "97%"},{},{}]
   @Input() people: People[] = [];
 
   constructor(
